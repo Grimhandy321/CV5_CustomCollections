@@ -13,12 +13,14 @@ class Stack:
         self._count = 0
 
     def add(self, value):
+        """add to top (lifo)"""
         new_node = SinglyNode(value)
         new_node.next = self.top
         self.top = new_node
         self._count += 1
 
     def pop(self):
+        """add to top (lifo)"""
         if not self.top:
             raise StackEmptyError("Cannot pop.")
         value = self.top.value
@@ -34,6 +36,7 @@ class Stack:
         self._count = 0
 
     def popAll(self):
+        """get all as [] """
         elements = []
         while self.top:
             elements.append(self.pop())

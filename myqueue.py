@@ -13,8 +13,8 @@ class Queue:
         self.head = None
         self.tail = None
         self._count = 0
-
     def add(self, value):
+        """add value to end  (fifo)"""
         new_node = DoublyNode(value)
         if not self.tail:  # Empty queue
             self.head = self.tail = new_node
@@ -25,6 +25,7 @@ class Queue:
         self._count += 1
 
     def pop(self):
+        """get first value  (fifo)"""
         if not self.head:
             raise QueueEmptyError("Cannot pop.")
         value = self.head.value
@@ -45,6 +46,7 @@ class Queue:
         self._count = 0
 
     def popAll(self):
+        """ get [] of all elements """
         elements = []
         while self.head:
             elements.append(self.pop())
